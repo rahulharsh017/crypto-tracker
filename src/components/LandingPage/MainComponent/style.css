@@ -1,0 +1,120 @@
+.flex-info{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 0.5rem 3rem;
+}
+
+.track-crypto-heading,
+.real-time-heading{
+    font-size: 6.5rem;
+    margin:0;
+}
+
+.track-crypto-heading{
+    color:var(--white);
+     -webkit-text-stroke-width: 3px;
+    -webkit-text-stroke-color: var(--white);  
+}
+
+.track-crypto-heading:hover{
+    color:var(--black);
+    -webkit-text-stroke-width: 3px;
+    -webkit-text-stroke-color: var(--white);
+    transition: all 0.5s;
+}
+
+.real-time-heading{
+    color:var(--blue);
+}
+.btn-flex{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap:1.5rem;
+    margin-top: 2rem;
+}
+.phone-container{
+    width: 50%;
+    position: relative;
+}
+
+.iphone{
+    position: absolute;
+  right: 10px;
+  width: 300px;
+  z-index: 100;
+}
+.gradient{
+    position: absolute;
+    right: 0px;
+    top: 80px;
+    width: 250px;
+}
+
+@media only screen and (max-width: 1350px) {
+    .track-crypto-heading,
+.real-time-heading {
+      font-size: 5rem;
+    }
+  }
+  
+  @media only screen and (max-width: 1050px) {
+    .track-crypto-heading,
+.real-time-heading {
+      font-size: 4rem;
+    }
+  
+    .gradient {
+      right: 0px;
+      top: 60px;
+      width: 200px;
+    }
+    .iphone {
+      right: 0px;
+      width: 250px;
+    }
+  }
+  
+  @media only screen and (max-width: 800px) {
+    .track-crypto-heading,
+.real-time-heading {
+      font-size: 2rem;
+    }
+    .flex-info {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+  
+    .track-crypto-heading,
+.real-time-heading,
+    .info-text {
+      text-align: center;
+    }
+  
+    .info-text {
+      font-size: 0.8rem;
+    }
+  
+    .btn-flex {
+      justify-content: center;
+      width: 100%;
+    }
+  
+    .phone-container {
+      margin-top: 3rem;
+      margin-right: auto;
+      margin-left: auto;
+    }
+  }
+  @media only screen and (max-width: 800px) {
+    .gradient,
+    .iphone {
+      left: 0px;
+    }
+  
+    .iphone {
+      left: -30px;
+    }
+  }
