@@ -10,6 +10,10 @@
   --red: #f94141;
 }
 
+html{
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
   -webkit-font-smoothing: antialiased;
@@ -48,3 +52,11 @@ img {
   -o-user-drag: none;
 }
 
+.grey-wrapper{
+  display: block;
+  width: 90%;
+  background-color: var(--darkgrey);
+  margin: auto;
+  border-radius: 0.5rem;
+  padding: 0rem 0.5rem;
+}
