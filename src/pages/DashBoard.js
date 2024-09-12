@@ -11,7 +11,7 @@ function DashBoard() {
   const [coins, setCoins] = useState([]);
   const [paginatedCoins, setPaginatedCoins] = useState([]);
   const [search, setSearch] = useState("");
-  const [page, setPage] = React.useState(1);
+  const [page, setPage] = useState(1);
   const [isLoading, setIsLoading] = useState(true);
 
   const onSearchChange = (e) => {
@@ -37,7 +37,7 @@ function DashBoard() {
         "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=1"
       )
       .then((response) => {
-        console.log(response);
+        // console.log(response);
         setCoins(response.data);
         setPaginatedCoins(response.data.slice(0, 10));
         setIsLoading(false);
