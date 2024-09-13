@@ -4,6 +4,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
 import DashBoard from './pages/DashBoard';
 import CoinPage from './pages/CoinPage';
+import ComparePage from './pages/ComparePage';
 
 function App() {
   return (
@@ -13,8 +14,8 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/dashboard" element={<DashBoard />} />
              <Route path="/coin/:id" element={<CoinPage /> } />
-            {/* <Route path="/compare" element={<Compare />} />
-            <Route path="/watchlist" element={<Watchlist />} /> */}
+             <Route path="/compare" element={<ComparePage />} />
+           
           </Routes>
         </BrowserRouter>
     </div>

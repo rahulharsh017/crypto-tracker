@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import Header from "../components/Common/Header";
 import Loader from "../components/Common/Loader";
 import LineChart from "../components/Coin/LineChart";
-import { settingCoinObject } from "../functions/setCoinObject";
+import { setCoinObject } from "../functions/setCoinObject";
 import List from "../components/Dashboard/List";
 import CoinInfo from "../components/Coin/CoinInfo";
 import { getCoinData } from "../functions/getCoinData";
@@ -11,6 +11,7 @@ import { getCoinPrices } from "../functions/getCoinPrices";
 import SelectDays from "../components/Coin/SelectDays";
 import { settingChartData } from "../functions/settingChartData";
 import TogglePriceType from "../components/Coin/TogglePriceType";
+import Footer from "../components/Common/Footer";
 
 
 function CoinPage() {
@@ -30,7 +31,7 @@ function CoinPage() {
   async function getData(){
     const data = await getCoinData(id);
     if(data){
-      settingCoinObject(data,setCoinData);
+      setCoinObject(data,setCoinData);
       const prices = await getCoinPrices(id,days,priceType);
       if(prices.length > 0){
         console.log(prices);
@@ -76,7 +77,9 @@ function CoinPage() {
       </div>
       <CoinInfo heading={coinData.name} desc={coinData.desc} />
       </>)}
+      <Footer />
     </div>
+   
   );
 }
 

@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from "react";
 import Header from "../components/Common/Header";
 import TabComponent from "../components/Dashboard/TabsComponent";
-import axios from "axios";
 import SearchComponent from "../components/Dashboard/SearchComponent";
 import PaginationComponent from "../components/Dashboard/Pagination";
 import Loader from "../components/Common/Loader";
 import BackToTop from "../components/Common/BackToTop";
+import { get100Coins } from "../functions/get100Coins";
+import Footer from "../components/Common/Footer";
 
 function DashBoard() {
   const [coins, setCoins] = useState([]);
@@ -32,21 +33,17 @@ function DashBoard() {
   };
 
   useEffect(() => {
-    axios
-      .get(
-        "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=1"
-      )
-      .then((response) => {
-        // console.log(response);
-        setCoins(response.data);
-        setPaginatedCoins(response.data.slice(0, 10));
-        setIsLoading(false);
-      })
-      .catch((error) => {
-        console.log(error);
-        setIsLoading(false);
-      });
-  });
+    getData();
+  },[]);
+
+  const getData = async () =>{
+    const myCoins = await get100Coins();
+    if(myCoins){
+      setCoins(myCoins);
+      setPaginatedCoins(myCoins.slice(0,10));
+      setIsLoading(false);
+    }
+  };
   return (
     <>
       <Header />
@@ -65,6 +62,7 @@ function DashBoard() {
           )}
         </div>
       )}
+      <Footer />
     </>
   );
 }
