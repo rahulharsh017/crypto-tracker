@@ -13,7 +13,7 @@ function Grid({ coin }) {
       }`}
     >
       <div className="info-flex">
-        <img src={coin.image} className="coin-logo" />
+        <img src={coin.image} className="coin-logo" alt="crypto"/>
         <div className="name-col">
           <p className="coin-symbol">{coin.symbol}</p>
           <p className="coin-name">{coin.name}</p>
