@@ -3,6 +3,7 @@ import Button from '../../Common/Button'
 import "./style.css"
 import iphone from '../../../assets/iphone.png'
 import gradient from '../../../assets/gradient.png'
+import {Link} from 'react-router-dom'
 
 import {motion} from 'framer-motion'
 
@@ -30,7 +31,9 @@ function MainComponent() {
           animate={{opacity:1,x:0}}
           transition={{duration:1,delay:1.5}}
           className='btn-flex'>
-          <Button text ={"DashBoard"} />
+          <Link to ='/DashBoard'>
+          <Button text ={"DashBoard"} onClick={() => console.log("button is clicked")}/>
+          </Link>
           <Button text = {"Share"} outlined={true}/>
           </motion.div>
         </div>
